@@ -98,7 +98,10 @@ class Ray
     }
 
     // Calculate and return the point in space (a Vec3) for this ray for the given value of t
-    pointAt(t) {}
+    pointAt(t)
+    {
+        return(this.origin.add(this.direction.scale(t)))
+    }
 }
 
 // The result of casting a ray into our scene
