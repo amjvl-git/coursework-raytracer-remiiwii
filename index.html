@@ -166,16 +166,20 @@ const spheres = new Array(
 
 
 // Main code
+let colour = new Vec3(0,0,0)
+
 let imageWidth = document.getElementById("canvas").width
 let imageHeight = document.getElementById("canvas").height
-let aspectRatio = document.getElementById("canvas").height / document.getElementById("canvas").width
-
-let colour = new Vec3(0,0,0)
+let aspectRatio = imageHeight / imageWidth
 
 for (let i = 0; i < imageWidth; i++)
 {
     for (let j = 0; j <= imageHeight; j++)
     {
+        let u = j / (imageWidth-1)
+        let v = j / (imageHeight-1)
+        colour.x = u * 255
+        colour.y = v * 255
         setPixel(i,j,colour)
     }
 }
